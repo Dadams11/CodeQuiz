@@ -1,8 +1,6 @@
-// variables to keep track of quiz state
 var currentQuestionIndex = 0;
 //time left value here
 var time = questions.length * 15
-// var time = ;
 var timerId;
 
 // variables to reference DOM elements
@@ -27,6 +25,8 @@ function startQuiz() {
   // un-hide questions section
  questionsEl.removeAttribute('hide');
 quizScreen.removeAttribute('hide');
+questionsEl.setAttribute('class','show');
+quizScreen.setAttribute('class','show')
   // start timer
   timerId = setInterval(clockTick, 1000);
 
@@ -35,7 +35,6 @@ quizScreen.removeAttribute('hide');
 
   getQuestion();
 }
-//create a second taken off of a clock
 function tick(){
   //to update time
   time --;
@@ -69,7 +68,7 @@ function getQuestion() {
 
 function questionClick(target)  
   var buttonEl = target;
- // if the clicked element is not a choice button, do nothing.
+ // do nothing if clicked choice is not a option
  if (!buttonEl.matches('.choice')) {
   return;
   }
@@ -118,9 +117,8 @@ function quizEnd() {
 }
 
 function clockTick() {
-  // update time
-  // decrement the variable we are using to track time
-  timerEl.textContent = time; // update out time
+  //  to update time
+  timerEl.textContent = time; 
 
   // check if user ran out of time
   if (time <= 0) {
@@ -135,18 +133,17 @@ function saveHighscore() {
   // make sure value wasn't empty
   if (initials !=='') {
 
-    // get saved scores from localstorage, or if not any, set to empty array
+    // to get saved scores from localstorage,
     
     var highscores =
       JSON.parse(window.localStorage.getItem('highscores')) || [];
 
-    // format new score object for current user
     var newScore = {
       score: time,
       initials: initials,
     };
 
-    // save to localstorage
+    // save to outr localstorage
     highscores.push(newScore);
     window.localStorage.setItem('highscores', JSON.stringify(highscores));
 
@@ -162,13 +159,13 @@ function checkForEnter(event) {
   }
 }
 
-// user clicks button to submit initials
+// user clicks  buttons to start the functions
 submitBtn.onclick = saveHighscore;
 
-// user clicks button to start quiz
+
 startBtn.onclick = startQuiz;
 
-// user clicks on element containing choices
+
 choicesEl.onclick = questionClick;
 
 initialsEl.onkeyup = checkForEnter;

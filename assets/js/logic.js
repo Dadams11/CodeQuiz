@@ -23,7 +23,7 @@ function startQuiz() {
    startScreenEl.setAttribute('class', 'hide');
    titleScreen.setAttribute('class','hide');
   // un-hide questions section
- questionsEl.removeAttribute('hide');
+ questions.removeAttribute('hide');
 quizScreen.removeAttribute('hide');
 questionsEl.setAttribute('class','show');
 quizScreen.setAttribute('class','show')
@@ -66,7 +66,7 @@ function getQuestion() {
   }
 }
 
-function questionClick(target)  
+function questionClick(target)  {
   var buttonEl = target;
  // do nothing if clicked choice is not a option
  if (!buttonEl.matches('.choice')) {
@@ -98,7 +98,7 @@ feedbackEl.textContent = 'Correct!';
   } else {
     getQuestion();
   }
-
+}
 
 
 function quizEnd() {

@@ -2,7 +2,7 @@
 var questions = [
   {
     title: 'What doess CSS stand for',
-    choices: ['Cascading Style Sheets,' 'Calling Style Sheet,', 'Captive Style Sheet,' 'Cascading Some Styles'],
+    choices: ['Cascading Style Sheets', 'Calling Style Sheet', 'Captive Style Sheet', 'Cascading Some Styles'],
     answer: 'Cascading Style Sheets',
   },
   {

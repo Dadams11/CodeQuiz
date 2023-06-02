@@ -22,13 +22,9 @@ var highScoreEl= document.getElementById('highscores');
 function startQuiz() {
   // hide start screen
    startScreenEl.setAttribute('class', 'hide');
-  // titleScreen.setAttribute('class','hide');
   // un-hide questions section
- //questions.removeAttribute('hide');
-//quizScreen.removeAttribute('hide');
-questionsEl.setAttribute('class','show');
+ questionsEl.setAttribute('class','show');
 
-//quizScreen.setAttribute('class','show')
   // start timer
   timerId = setInterval(clockTick, 1000);
 
@@ -70,11 +66,6 @@ function getQuestion() {
 
 function questionClick(event)  {
   var buttonEl = event.target;
- // do nothing if clicked choice is not a option
- //if (!buttonEl.matches('.choice')) {
- // return;
- // }
-
   // check if user guessed wrong
   if (buttonEl.value !== questions[currentQuestionIndex].answer) {
 // penalize time
@@ -102,7 +93,6 @@ feedbackEl.textContent = 'Correct!';
   }
 }
 
-
 function quizEnd() {
   // stop timer
  clearInterval(timerId);
@@ -117,8 +107,6 @@ function quizEnd() {
   var finalScoreEl = document.getElementById('final-score');
   finalScoreEl.textContent = time;
 
-  // hide questions section
- // quizScreen.setAttribute('class', 'hide');
 }
 
 function clockTick() {
@@ -182,8 +170,6 @@ function printHighscores() {
   var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
 
   // sort highscores by score property in descending order HINT: the sort method. 
-  
-
   for (var i = 0; i < highscores.length; i += 1) {
     // create li tag for each high score
     var liTag = document.createElement('li');

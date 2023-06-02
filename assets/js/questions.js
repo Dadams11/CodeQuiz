@@ -22,9 +22,4 @@ var questions = [
     answer: 'alerts',
   },
 
-  {
-    title: 'Where does the CSS link usually go',
-    choices: ['<body>', '<head>','<meta>' ,'<end>'],
-    answer: '<head>',
-  },
 ];

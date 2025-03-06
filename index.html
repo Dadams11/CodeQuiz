@@ -35,11 +35,15 @@
           Enter initials: <input type="text" id="initials" max="3" />
           <button id="submit">Submit</button>
         </p>
-      </div>
-      <div id= "highscores" class="hide">
-        <h1>Highscores</h1>
-        <ol id= "highscores"></ol>
-        <button id="clear">Clear Highscores</button>
+        
+        <!-- Highscores section appears only on this screen -->
+        <div id="highscores">
+          <h1>Highscores</h1>
+          <ol id="highscores-list"></ol> <!-- Highscore List -->
+          <button id="clear">Clear Highscores</button>
+        </div>
+
+        <button id="restart">Start Over</button> <!-- Start Over Button -->
       </div>
   
       <div id="feedback" class="feedback hide"></div>
